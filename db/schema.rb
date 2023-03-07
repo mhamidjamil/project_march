@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_132737) do
     t.datetime "deadline"
     t.boolean "type"
     t.string "image"
-    t.integer "status", default: 0 # 0: new, 1: started, 2: resolved (for bug)/completed (for feature)
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,8 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_132737) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.integer "role", default: 0
     t.string "password_digest"
-    t.integer "role", default: 0 # 0: developer, 1: QA, 2: manager
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
